@@ -76,11 +76,21 @@ The level to write logs. Any logs at or above this level will be written. The sp
 Set the max size for the log file, when the limit is reached the file is moved and a new one is created. The size is exprimed in `kilobyte`. The new file is
 named `mylog_1.log` or `mylog_error_1.log` if you enable `log.fileLevelSuffix`.
 
+### log.fileHeadPrefix
+
+* {Bool}
+
+This option allow you to prefix the files with the `log.heading` value like `heading_mylog.log`.
+
+**Important** It is highly recommended to use slug keyword for `log.heading` when `log.fileHeadPrefix` is enabled.
+
 ### log.fileLevelSuffix
 
 * {Bool}
 
 This option create seperated log file for each log level. So you can have `mylog_error.log`, `mylog_warn.log`, `mylog_info.log` etc...
+
+**Important** It is highly recommended to use slug keyword for custom level when `log.fileLevelSuffix` is enabled.
 
 ## Bug & suggestions
 If you have any suggestions or have found a bug feel free to use the [tracker](https://github.com/antoine-pous/npmlogger/issues).

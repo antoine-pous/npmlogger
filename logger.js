@@ -40,6 +40,9 @@ log.on('log', function(l) {
 
   var filename = log.fileName;
 
+  if(log.fileHeadPrefix === true && log.heading !== '')
+    filename = log.heading.concat('_').concat(filename);
+
   if(log.fileLevelSuffix === true)
     filename = filename.concat('_').concat(l.level);
 
