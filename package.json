@@ -1,0 +1,36 @@
+{
+  "author": "Antoine Pous <gecko@dvp.io>",
+  "name": "npmlogger",
+  "version": "1.0.0",
+  "description": "Write your logs natively from npmlog with minor change in your application",
+  "main": "logger.js",
+  "dependencies": {
+    "mkpath": "^1.0.0",
+    "npmlog": "^4.0.2"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/antoine-pous/npmlogger.git"
+  },
+  "keywords": [
+    "logging",
+    "log",
+    "logger",
+    "logfile",
+    "npmlog",
+    "npm",
+    "extension",
+    "rotate",
+    "output",
+    "file"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antoine-pous/npmlogger/issues"
+  },
+  "homepage": "https://github.com/antoine-pous/npmlogger"
+}
