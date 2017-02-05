@@ -1,3 +1,7 @@
+### 1.2.0
+
+* Add `log.fileColor`
+
 ### 1.1.0
 
 * Add `log.fileHeadPrefix`

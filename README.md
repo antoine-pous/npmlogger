@@ -69,6 +69,12 @@ When this feature is enabled, the path is automaticly created.
 
 The level to write logs. Any logs at or above this level will be written. The special level `silent` will prevent anything from being logged ever.
 
+### log.fileColor
+
+* {Bool}
+
+By default npmlogger remove all console colors from file. You can allow colors by setting this option to true.
+
 ### log.fileMaxSize
 
 * {Number}

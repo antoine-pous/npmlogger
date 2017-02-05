@@ -17,6 +17,8 @@ log.fileName = require.main.filename;
 
 log.fileMaxSize = false;
 
+log.fileColor = false;
+
 log.on('log', function(l) {
 
   if(log.levels[l.level] < log.levels[log.fileLevel]) {
@@ -28,7 +30,7 @@ log.on('log', function(l) {
   if(l.prefix !== '')
     entry = entry.concat('[' + l.prefix + '] ');
 
-  entry = entry.concat(l.message.trim());
+  entry = log.fileColor === true ? entry.concat(l.message.trim()) : entry.concat(l.message.trim()).replace(/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]/g, '');
 
   entry = entry.concat(os.EOL);
 
