@@ -4,6 +4,7 @@ var fs = require('fs');
 var os = require('os');
 var log = exports = module.exports = require('npmlog');
 var mkpath = require('mkpath');
+var dateFormat = require('dateformat');
 
 log.fileLevel = 'silly';
 
@@ -44,6 +45,9 @@ log.on('log', function(l) {
 
   if(log.fileHeadPrefix === true && log.heading !== '')
     filename = log.heading.concat('_').concat(filename);
+
+  if(log.fileDatePrefix !== '')
+    filename = dateFormat(new Date(), log.fileDatePrefix).concat('_').concat(filename);
 
   if(log.fileLevelSuffix === true)
     filename = filename.concat('_').concat(l.level);

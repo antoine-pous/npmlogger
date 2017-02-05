@@ -82,6 +82,14 @@ By default npmlogger remove all console colors from file. You can allow colors b
 Set the max size for the log file, when the limit is reached the file is moved and a new one is created. The size is exprimed in `kilobyte`. The new file is
 named `mylog_1.log` or `mylog_error_1.log` if you enable `log.fileLevelSuffix`.
 
+### log.fileDatePrefix
+
+* {String} See [dateformat](https://www.npmjs.com/package/dateformat) documentation
+
+This option allow you to prefix the filename with your own date format.
+
+**Note:** The date prefix is always put **before** `log.fileHeadPrefix`.
+
 ### log.fileHeadPrefix
 
 * {Bool}
