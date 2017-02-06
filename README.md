@@ -14,7 +14,7 @@ with minor changes in your application code.
 ## Installation
 
 ```console
-npm install npmlogger
+npm install npmlogger --save
 ```
 
 ## Basic Usage
