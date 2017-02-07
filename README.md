@@ -1,12 +1,10 @@
 npmlogger
 ===========
 
-[![npm](https://img.shields.io/npm/l/npmlogger.svg)](https://www.npmjs.com/package/npmlogger)
 [![Build Status](https://travis-ci.org/antoine-pous/npmlogger.svg?branch=master)](https://travis-ci.org/antoine-pous/npmlogger)
-[![github](https://img.shields.io/github/release/antoine-pous/npmlogger.svg)](https://github.com/antoine-pous/npmlogger/releases)
-[![npm](https://img.shields.io/npm/dt/npmlogger.svg)](https://www.npmjs.com/package/npmlogger)
 
-[![npm](https://nodei.co/npm/npmlogger.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/npmlogger)
+[![NPM Stats](https://nodei.co/npm/npmlogger.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/npmlogger)
+[![NPM](https://nodei.co/npm-dl/npmlogger.png?height=2)](https://nodei.co/npm/npmlogger/)
 
 NPM Logger is a package designed to write easily your log files. For more convenience npmlogger extends npmlog, so you can use it
 with minor changes in your application code.
