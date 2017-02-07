@@ -1,8 +1,13 @@
 var log = require('./logger.js');
 
-log.fileBasePath = __dirname + '/logs/';
-log.fileName = 'example';
-log.fileCreatePath = true;
+log.fileBasePath    = __dirname + '/logs/';
+log.fileName        = 'example';
+log.fileCreatePath  = true;
+log.fileDatePrefix  = '';
+log.fileHeadSuffix  = false;
+log.fileLevelSuffix = false;
+log.fileMaxSize     = 2.5;
+log.fileColor       = false;
 
 log.heading = 'npmlogger'
 
