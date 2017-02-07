@@ -1,3 +1,7 @@
+### 1.3.2
+
+* Fix filename issue when file extension is detected
+
 ### 1.3.1
 
 * Validate `log.fileName` extension [#2](https://github.com/antoine-pous/npmlogger/issues/2)

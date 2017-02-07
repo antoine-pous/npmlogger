@@ -1,7 +1,7 @@
 var log = require('./logger.js');
 
 log.fileBasePath    = __dirname + '/logs/';
-log.fileName        = 'example';
+log.fileName        = 'example.log';
 log.fileCreatePath  = true;
 log.fileDatePrefix  = '';
 log.fileHeadSuffix  = false;
