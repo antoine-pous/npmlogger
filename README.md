@@ -26,8 +26,8 @@ log.fileLevel = 'warn';
 // Set the basepath for log files
 log.fileBasePath = './logs';
 
-// Set the filename without extension, it's always .log
-log.fileName = 'mylog';
+// Set the filename
+log.fileName = 'mylog.log';
 
 // write error log to mylog.log
 log.info('My prefix', 'i am info'); // Displayed but not written
@@ -59,7 +59,7 @@ The base path for the logs file, by default this is the `logs` directory related
 
 * {Bool}
 
-When this feature is enabled, the path is automaticly created.
+When this feature is enabled, the path is automaticly created. Use [mkpath](https://www.npmjs.com/package/mkpath) package.
 
 ### log.fileLevel
 
