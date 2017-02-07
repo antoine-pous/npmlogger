@@ -41,7 +41,7 @@ log.on('log', function(l) {
   if(!fs.existsSync(log.fileBasePath) && log.fileCreatePath === true)
     mkpath.sync(log.fileBasePath);
 
-  var filename = log.fileName.endsWith('.log') ? log.fileName : log.fileName.concat('.log');
+  var filename = log.fileName.endsWith('.log') === true ? log.fileName.slice(0, -4) : log.fileName;
 
   if(log.fileHeadPrefix === true && log.heading !== '')
     filename = log.heading.concat('_').concat(filename);
