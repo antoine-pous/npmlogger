@@ -1,3 +1,7 @@
+### 1.4.0
+
+* Add `log.fileSlugify`
+
 ### 1.3.2
 
 * Fix filename issue when file extension is detected

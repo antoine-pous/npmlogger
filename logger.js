@@ -5,6 +5,8 @@ var os = require('os');
 var log = exports = module.exports = require('npmlog');
 var mkpath = require('mkpath');
 var dateFormat = require('dateformat');
+var slug = require('slug');
+slug.defaults.mode = 'rfc3986';
 
 log.fileLevel = 'silly';
 
@@ -19,6 +21,8 @@ log.fileName = require.main.filename;
 log.fileMaxSize = false;
 
 log.fileColor = false;
+
+log.fileSlugify = false;
 
 log.on('log', function(l) {
 
@@ -51,6 +55,9 @@ log.on('log', function(l) {
 
   if(log.fileLevelSuffix === true)
     filename = filename.concat('_').concat(l.level);
+
+  if(log.fileSlugify === true)
+    filename = slug(filename);
 
   fs.writeFileSync(log.fileBasePath + filename + '.log', entry, {"encoding": "utf8", "flag": "a+"});
 
