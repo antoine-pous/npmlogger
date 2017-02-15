@@ -1,3 +1,7 @@
+### 1.4.1
+
+* Excludes unused files
+
 ### 1.4.0
 
 * Add `log.fileSlugify`
