@@ -10,10 +10,9 @@
   "dependencies": {
     "dateformat": "^2.0.0",
     "mkpath": "^1.0.0",
-    "npmlog": "^4.0.2",
+    "npmlog": "^4.1.0",
     "slug": "^0.9.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo ok"
   },
