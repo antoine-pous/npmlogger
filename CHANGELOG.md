@@ -1,3 +1,7 @@
+### 1.4.2
+
+* Fix wrong path when the module use the default file name
+
 ### 1.4.1
 
 * Excludes unused files

@@ -16,7 +16,9 @@ log.fileCreatePath = false;
 
 log.fileBasePath = require('path').dirname(require.main.filename) + '/logs/';
 
-log.fileName = require.main.filename;
+var filePath = require.main.filename.split('/');
+
+log.fileName = filePath[filePath.length -1];
 
 log.fileMaxSize = false;
 

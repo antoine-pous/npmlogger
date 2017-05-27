@@ -3,6 +3,7 @@ npmlogger
 
 [![Build Status](https://travis-ci.org/antoine-pous/npmlogger.svg?branch=master)](https://travis-ci.org/antoine-pous/npmlogger)
 [![Dependency Status](https://img.shields.io/gemnasium/antoine-pous/npmlogger.svg)](https://gemnasium.com/antoine-pous/npmlogger)
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MAKZLQGRSBCT2)
 
 NPM Logger is a package designed to write easily your log files. For more convenience npmlogger extends npmlog, so you can use it
 with minor changes in your application code.
