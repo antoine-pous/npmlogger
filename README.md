@@ -3,7 +3,7 @@ npmlogger
 
 [![Build Status](https://travis-ci.org/antoine-pous/npmlogger.svg?branch=master)](https://travis-ci.org/antoine-pous/npmlogger)
 [![Dependency Status](https://img.shields.io/gemnasium/antoine-pous/npmlogger.svg)](https://gemnasium.com/antoine-pous/npmlogger)
-[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MAKZLQGRSBCT2)
+[![Donate](https://img.shields.io/badge/%E2%99%A5-donate-459042.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=MAKZLQGRSBCT2)
 
 NPM Logger is a package designed to write easily your log files. For more convenience npmlogger extends npmlog, so you can use it
 with minor changes in your application code.
@@ -109,8 +109,16 @@ This option create seperated log file for each log level. So you can have `mylog
 
 When this feature is enabled the filename is slugified using [RCF3986](https://www.ietf.org/rfc/rfc3986.txt) standard.
 
+### log.fileEntriesTemplate
+
+* {Bool}
+
+When disabled this option remove the current default template and let you decide how to manage your entries.
+
+**Note:** The template is `[date] [level] [prefixes] error`, when disabled you only have `prefix error`.
+
 ## Bug & suggestions
-If you have any suggestions or have found a bug feel free to use the [tracker](https://github.com/antoine-pous/npmlogger/issues).
+If you have any suggestions or found a bug feel free to use the [tracker](https://github.com/antoine-pous/npmlogger/issues).
 
 [1]: https://github.com/npm/npmlog#logheading
 [2]: #logfileslugify

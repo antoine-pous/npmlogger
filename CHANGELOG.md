@@ -1,3 +1,8 @@
+### 1.5.0
+
+* Add `log.fileEntriesTemplate`
+* Now the logger write logs files asynchronously
+
 ### 1.4.2
 
 * Fix wrong path when the module use the default file name
