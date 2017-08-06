@@ -1,11 +1,17 @@
 "use strict";
 
-var fs = require("fs");
-var os = require("os");
-var log = exports = module.exports = require("npmlog");
-var mkpath = require("mkpath");
-var dateFormat = require("dateformat");
-var slug = require("slug");
+declare let require: NodeRequire;
+
+import * as fs from "fs-extra";
+import * as os from "os";
+import {dirname, sep as dirSep} from "path";
+import * as logger from "npmlog";
+import * as dateFormat from "dateformat"
+import * as slug from "slug";
+
+export let log = logger;
+
+const mainPath :any = (require as any).main.filename;
 
 slug.defaults.mode = "rfc3986";
 
@@ -15,9 +21,9 @@ log.fileLevelSuffix = false;
 
 log.fileCreatePath = false;
 
-log.fileBasePath = require("path").dirname(require.main.filename) + "/logs/";
+log.fileBasePath = dirname(mainPath) + "/logs/";
 
-var filePath = require.main.filename.split("/");
+let filePath = mainPath.split(dirSep);
 
 log.fileName = filePath[filePath.length -1];
 
@@ -31,15 +37,15 @@ log.fileDatePrefix = null;
 
 log.fileEntriesTemplate = true;
 
-log.on("log", function(l) {
+log.on("log", async function(l) {
 
-  var date = new Date()
+  let date = new Date();
 
   if (log.levels[l.level] < log.levels[log.fileLevel]) {
     return false;
   }
 
-  var entry = "";
+  let entry = "";
 
   if (log.fileEntriesTemplate === true)  {
     entry = "[" + date.toString() + "] [" + l.level + "] ";
@@ -58,15 +64,19 @@ log.on("log", function(l) {
   if(!log.fileBasePath.endsWith("/"))
     log.fileBasePath = log.fileBasePath.concat("/");
 
-  if(!fs.existsSync(log.fileBasePath) && log.fileCreatePath === true)
-    mkpath.sync(log.fileBasePath);
+  try {
+    await fs.ensureDir(log.fileBasePath)
+  } catch (e) {
+    // Create logs dir if it doesn't exit.
+    if(log.fileCreatePath === true) await fs.mkdirs(log.fileBasePath)
+  }
 
-  var filename = log.fileName.endsWith(".log") === true ? log.fileName.slice(0, -4) : log.fileName;
+  let filename = log.fileName.endsWith(".log") === true ? log.fileName.slice(0, -4) : log.fileName;
 
   if(log.fileHeadPrefix === true && log.heading !== "")
     filename = log.heading.concat("_").concat(filename);
 
-  if(typeof log.fileDatePrefix !== "string" && log.fileDatePrefix.trim() !== "")
+  if(typeof log.fileDatePrefix === "string" && log.fileDatePrefix.trim())
     filename = dateFormat(date, log.fileDatePrefix).concat("_").concat(filename);
 
   if(log.fileLevelSuffix === true)
@@ -92,13 +102,13 @@ log.on("log", function(l) {
             if(err instanceof Error)
               throw err;
 
-            var regex = new RegExp(filename + "_(\\d+)\.log");
+            let regex = new RegExp(filename + "_(\\d+)\.log");
 
-            var f = 1;
+            let f = 1;
 
-            for(var i = 0; i < files.length; i++) {
+            for(let i = 0; i < files.length; i++) {
 
-              var m = regex.exec(files[i]);
+              let m = regex.exec(files[i]);
 
               if(m !== null) {
 
@@ -108,7 +118,7 @@ log.on("log", function(l) {
 
             }
 
-            var cp = fs.createReadStream(log.fileBasePath + filename + ".log").pipe(fs.createWriteStream(log.fileBasePath + filename + "_" + f + ".log"));
+            let cp = fs.createReadStream(log.fileBasePath + filename + ".log").pipe(fs.createWriteStream(log.fileBasePath + filename + "_" + f + ".log"));
 
             cp.on("close", function() {
 
@@ -129,3 +139,6 @@ log.on("log", function(l) {
   });
 
 });
+
+export default log;
+module.exports = log;
