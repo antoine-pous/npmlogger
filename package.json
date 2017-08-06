@@ -1,7 +1,7 @@
 {
   "author": "Antoine Pous <gecko@dvp.io>",
   "name": "npmlogger",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Write your logs natively from npmlog with minor change in your application",
   "main": "./dist/logger.js",
   "dependencies": {
